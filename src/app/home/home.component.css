@@ -1,0 +1,15 @@
+.homePageMainDiv{
+    background: url('../img/homePageBg.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+.homeSliderContaint {
+    padding-top: 20%;
+}
+
+.homeSliderContaint h1{
+    font-size: 30px;
+}
