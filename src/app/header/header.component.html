@@ -14,8 +14,8 @@
       <div class="bar3"></div>
       </div>
 
-      <div [@slideInOutAnimation]='menuActive'  class="toggleHeaderMenu" *ngIf = "menuIconChange" >
-        <ul class="nav pull-right headerMenul">
+      <div [@focusPanel]='menuActive' *ngIf = "menuIconChange" class = "test" >
+        <ul class="nav pull-right headerMenul" [@wavePanel]="'menuActive'">
           <li class="active"><a routerLink="">Home</a></li>
           <li><a routerLink="about">About</a></li>
           <li><a routerLink="services">Services</a></li>
