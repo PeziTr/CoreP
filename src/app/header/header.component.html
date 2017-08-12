@@ -7,11 +7,11 @@
     </div>
 
       
-      <div class="pull-right menuIcon" (click)="menuIconChange=!menuIconChange;stateChange()" [ngClass] = "{'change' : menuIconChange}"> 
+      <div class="pull-right menuIcon" (click)="menuIconChange=!menuIconChange;stateChange()" [ngClass] = "{'change' : menuIconChange}" [@barBox]='menuActive'> 
       
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+      <div class="bar1" [@barMove]='menuActive'></div>
+      <div class="bar2" [@barMove]='menuActive'></div>
+      <div class="bar3" [@barMove]='menuActive'></div>
       </div>
 
       <div [@focusPanel]='menuActive' *ngIf = "menuIconChange" class = "test" >

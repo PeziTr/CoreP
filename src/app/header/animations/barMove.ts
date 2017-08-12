@@ -1,7 +1,7 @@
 import { trigger, state, animate, transition, style, keyframes} from '@angular/animations';
 
-export const slideInOutAnimation =
-      trigger('focusPanel', [
+export const barMoveAnimation =
+      trigger('barMove', [
     //   transition(':enter', [   // :enter is alias to 'void => *'
     //   style({opacity:0}),
     //   animate(1000, style({opacity:1})) 
@@ -74,16 +74,71 @@ export const slideInOutAnimation =
     //   style({opacity:1}),
     //   animate(1000, style({opacity:0})) 
     // ])
-            state('mixBar', style({
-                
-                 
-            })),
-            state('unMixBar', style({
-               
+            
+    transition('menuActive => menuInactive', [ //':enter'
+    animate('500ms 500ms', keyframes([
+            style({
+              //  margin: '6px',
+               margin: '6px 0'
+              //  paddingTop: '16px'
 
-            })),
-            transition('mixBar => unMixBar', animate('500ms ease-in')),
-            transition('menuActive => menuInactive', animate('500ms ease-out'))
-        ]);
-
+            }),
+            style({
+                // margin: '0',
+                 margin: '0'
+            }),
+            style({
+              //  margin: '6px',
+               margin: '6px 0'
+              //  paddingTop: '16px'
+            })
+          ]))
+      ])
+    ]);
   
+export const boxMoveAnimation = 
+  trigger('barBox', [
+    transition('menuActive => menuInactive', [ //':enter'
+    animate('500ms 500ms', keyframes([
+            style({
+              offset: 0,
+              height : '53px',
+              //  margin: '6px',
+              //  height : 'auto'
+              //  paddingTop: '16px'
+
+            }),
+            style({
+              offset: .5,
+                // margin: '0',
+                height : '53px',
+                paddingTop: '16px'
+            }),
+            style({
+              offset: 1,
+              height : '53px',
+              //  margin: '6px',
+              //  height : 'auto'
+              // padding: '7px 10px'
+              paddingTop: '7px'
+            })
+          ]))
+      ])
+    ]);
+        //     state('mixBar', style({
+        //         // margin: '0',
+        //         height : '47px',
+        //         paddingTop: '16px'
+
+                 
+        //     })),
+        //     state('unMixBar', style({
+        //       //  margin: '6px',
+        //        height : 'auto'
+        //       //  paddingTop: '16px'
+
+        //     })),
+        //     transition('mixBar => maxBar', animate('500ms ease-in')),
+        //     transition('menuActive => menuInactive', animate('500ms ease-out'))
+        // ]);
+
